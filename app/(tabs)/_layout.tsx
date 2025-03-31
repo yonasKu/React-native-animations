@@ -50,6 +50,38 @@ export default function TabLayout() {
           ),
         }}
       />
+      
+      <Tabs.Screen 
+        name="onboardingExample" 
+        options={{
+          title: 'Onboarding',
+          tabBarIcon: ({ color, size }) => (
+            <Feather name="clipboard" size={size} color={color} />
+          ),
+          href: null,
+        }}
+      />
+      
+      <Tabs.Screen 
+        name="messageAnimation" 
+        options={{
+          title: 'Messages',
+          tabBarIcon: ({ color, size }) => (
+            <Feather name="message-circle" size={size} color={color} />
+          ),
+          href: null,
+        }}
+      />
+      <Tabs.Screen 
+        name="availabilityAnimation" 
+        options={{
+          title: 'Availability',
+          tabBarIcon: ({ color, size }) => (
+            <Feather name="layers" size={size} color={color} />
+          ),
+          href: null,
+        }}
+      />
     </Tabs>
   );
 }
