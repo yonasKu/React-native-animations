@@ -31,6 +31,25 @@ export default function TabLayout() {
           ),
         }}
       />
+      <Tabs.Screen
+      name='carrousalUi'
+      options={{
+        title:'Carrousal UI',
+        tabBarIcon: ({ color, size }) => (
+          <Feather name="layers" size={size} color={color} />
+        ),
+      }}
+      />
+
+      <Tabs.Screen 
+        name="appleInvites" 
+        options={{
+          title: 'Apple Invites',
+          tabBarIcon: ({ color, size }) => (
+            <Feather name="mail" size={size} color={color} />
+          ),
+        }}
+      />
     </Tabs>
   );
 }

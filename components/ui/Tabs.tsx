@@ -1,10 +1,10 @@
 import { View, Text, Pressable, StyleSheet } from 'react-native';
 import Animated, { FadeInRight, FadeOutRight } from 'react-native-reanimated';
 import { MotiView } from 'moti';
-import * as Icons from 'lucide-react-native';
+import { Feather } from '@expo/vector-icons';
 
 // Define types
-type IconName = keyof typeof Icons;
+type IconName = React.ComponentProps<typeof Feather>['name'];
 
 type TabItem = {
   icon: IconName;
@@ -45,11 +45,9 @@ export const Tabs = ({
             animate={{
               backgroundColor: isSelected ? activeBackgroundColor : inactiveBackgroundColor,
             }}
-            transition={{ type: 'spring', damping: 80, stiffness: 200 }}
-            layout={{
-              type: 'spring',
-              damping: 80,
-              stiffness: 200,
+            transition={{
+              type: 'timing',
+              duration: 300,
             }}
           >
             <Pressable
@@ -58,9 +56,7 @@ export const Tabs = ({
             >
               <Icon
                 name={item.icon}
-                animate={{
-                  color: isSelected ? activeColor : inactiveColor,
-                }}
+                color={isSelected ? activeColor : inactiveColor}
               />
               {isSelected && (
                 <Animated.Text
@@ -84,12 +80,11 @@ export const Tabs = ({
 };
 
 // Icon component that uses Moti for animations
-const Icon = ({ name, animate }: { name: IconName; animate?: any }) => {
-  const IconComponent = Icons[name];
+const Icon = ({ name, color }: { name: IconName; color: string }) => {
   return (
-    <MotiView {...animate}>
-      <IconComponent size={16} />
-    </MotiView>
+    <View>
+      <Feather name={name} size={16} color={color} />
+    </View>
   );
 };
 

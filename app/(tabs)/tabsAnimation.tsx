@@ -1,10 +1,9 @@
 import { View, StyleSheet } from 'react-native';
 import { useState } from 'react';
 import Animated, { FadeInRight, FadeOutLeft } from 'react-native-reanimated';
-import { LayoutAnimationConfig } from 'moti';
 import { Tabs } from '../../components/ui/Tabs';
 
-// Use lowercase icon names as they are exported in Lucide
+// Using Feather icon names
 const tabsData = [
   { icon: 'home', label: 'Home' },
   { icon: 'search', label: 'Search' },
