@@ -4,6 +4,13 @@ import { View, Text, StyleSheet, Image } from 'react-native';
 import Animated, {
   FadeIn,
   FadeOut,
+  interpolate,
+  interpolateColor,
+  useAnimatedStyle,
+  useDerivedValue,
+  useSharedValue,
+  withDelay,
+  withSpring,
   ZoomIn,
   ZoomOut,
 } from 'react-native-reanimated';
@@ -13,7 +20,7 @@ import { MotiView } from 'moti';
 const spacing = 8;
 const borderRadius = 12;
 const itemSize = 60;
-
+const AVATAR_SIZE = 40;
 // Colors
 const loadingColor = '#DDD';
 const loadingColorWashed = '#EEE';

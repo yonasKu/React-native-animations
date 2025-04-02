@@ -58,6 +58,7 @@ export const Tabs = ({
                 name={item.icon}
                 color={isSelected ? activeColor : inactiveColor}
               />
+              
               {isSelected && (
                 <Animated.Text
                   style={[styles.label, { color: activeColor }]}
