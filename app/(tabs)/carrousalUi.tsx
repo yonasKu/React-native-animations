@@ -1,5 +1,11 @@
 import React from "react";
-import { View, ScrollView, Text, StyleSheet, TouchableOpacity } from "react-native";
+import {
+  View,
+  ScrollView,
+  Text,
+  StyleSheet,
+  TouchableOpacity,
+} from "react-native";
 import { useRouter } from "expo-router";
 import { LinearGradient } from "expo-linear-gradient";
 
@@ -17,8 +23,8 @@ export default function TryScreen() {
         Check out some beautiful animation examples built with React Native
         Reanimated
       </Text>
-      <ScrollView 
-        style={styles.buttonsContainer} 
+      <ScrollView
+        style={styles.buttonsContainer}
         horizontal={true} // Allow horizontal scrolling
         contentContainerStyle={styles.scrollContent} // Style the content inside ScrollView
       >
@@ -81,7 +87,49 @@ export default function TryScreen() {
             <Text style={styles.buttonText}>Try Animated Sentence</Text>
           </LinearGradient>
         </TouchableOpacity>
-        
+        <TouchableOpacity
+          style={styles.buttonContainer}
+          onPress={() => router.push("/(carousel)/verticalCarousel")}
+          activeOpacity={0.8}
+        >
+          <LinearGradient
+            colors={["#FF0050", "#FF00A0"]}
+            start={{ x: 0, y: 0 }}
+            end={{ x: 1, y: 1 }}
+            style={styles.gradient}
+          >
+            <Text style={styles.buttonText}>Try Vertical Carousel</Text>
+          </LinearGradient>
+        </TouchableOpacity>
+        <TouchableOpacity
+          style={styles.buttonContainer}
+          onPress={() => router.push("/(carousel)/headphonesCarousel")}
+          activeOpacity={0.8}
+        >
+          <LinearGradient
+            colors={["#3B82F6", "#2563EB"]}
+            start={{ x: 0, y: 0 }}
+            end={{ x: 1, y: 1 }}
+            style={styles.gradient}
+          >
+            <Text style={styles.buttonText}>Try Headphones Carousel</Text>
+          </LinearGradient>
+        </TouchableOpacity>
+
+        <TouchableOpacity
+          style={styles.buttonContainer}
+          onPress={() => router.push("/(carousel)/roomParallax")}
+          activeOpacity={0.8}
+        >
+          <LinearGradient
+            colors={["#6D28D9", "#4C1D95"]}
+            start={{ x: 0, y: 0 }}
+            end={{ x: 1, y: 1 }}
+            style={styles.gradient}
+          >
+            <Text style={styles.buttonText}>Try Room Parallax</Text>
+          </LinearGradient>
+        </TouchableOpacity>
       </ScrollView>
     </View>
   );
@@ -101,7 +149,7 @@ const styles = StyleSheet.create({
     // gap is a newer property and may not work as expected in older versions of React Native
   },
   scrollContent: {
-    overflow: 'scroll',
+    overflow: "scroll",
     alignItems: "center", // Align the button containers in the center of the scroll view
   },
   title: {

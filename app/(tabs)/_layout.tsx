@@ -89,6 +89,7 @@ export default function TabLayout() {
           tabBarIcon: ({ color, size }) => (
             <Feather name="layers" size={size} color={color} />
           ),
+          href: null,
         }}
       />
       <Tabs.Screen
@@ -102,13 +103,13 @@ export default function TabLayout() {
         }}
       />
       <Tabs.Screen
-        name="headphonesCarousel"
+        name="carousel"
         options={{
-          title: "Headphones Carousel",
+          title: "Carousels",
           tabBarIcon: ({ color, size }) => (
-            <Feather name="layers" size={size} color={color} />
+            <Feather name="sliders" size={size} color={color} />
           ),
-          
+          href: "/(carousel)/index",
         }}
       />
     </Tabs>

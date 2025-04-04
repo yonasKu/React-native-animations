@@ -1,4 +1,4 @@
-// app/(tabs)/headphonesCarousel.tsx
+// app/(carousel)/headphonesCarousel.tsx
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import {
