@@ -13,6 +13,11 @@ export type ItemDetail = {
   unit: string;
 };
 
+export type ItemExtra = {
+  title: string;
+  value: boolean;
+};
+
 export const data = Array(4)
   .fill(0)
   .map((_, index) => ({
@@ -34,6 +39,20 @@ export const data = Array(4)
         title: 'timer',
         value: faker.datatype.boolean(),
         unit: '',
+      },
+    ],
+    extras: [
+      {
+        title: 'lights',
+        value: faker.datatype.boolean(),
+      },
+      {
+        title: 'air conditioner',
+        value: faker.datatype.boolean(),
+      },
+      {
+        title: 'music',
+        value: faker.datatype.boolean(),
       },
     ],
   }));
